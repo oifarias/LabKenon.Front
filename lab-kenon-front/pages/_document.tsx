@@ -5,9 +5,12 @@ export default class Document extends NextDocument {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+          <title> Lab Kenon</title>
+          <meta name="description" content="Seu Laboratorio online" />
+          <link rel="icon" href="/icon.ico" />
+        </Head>
         <body>
-          {/* Make Color mode to persists when you refresh the page. */}
           <ColorModeScript />
           <Main />
           <NextScript />
