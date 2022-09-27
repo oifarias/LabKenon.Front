@@ -3,7 +3,6 @@ import {
   Flex,
   Text,
   IconButton,
-  Button,
   Stack,
   Collapse,
   Icon,
@@ -12,9 +11,7 @@ import {
   PopoverTrigger,
   PopoverContent,
   useColorModeValue,
-  useBreakpointValue,
   useDisclosure,
-  Heading,
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
@@ -24,9 +21,12 @@ import {
 } from "@chakra-ui/icons";
 import { Title } from "../Hero";
 import { DarkModeSwitch } from "../../components/DarkModeSwitch";
+import { useRouter } from "next/router";
 
 export default function SideBar() {
   const { isOpen, onToggle } = useDisclosure();
+  const router = useRouter();
+
   return (
     <Box>
       <Flex
@@ -57,9 +57,18 @@ export default function SideBar() {
             }
             variant={"ghost"}
             aria-label={"Toggle Navigation"}
+            marginRight="100px"
           />
         </Flex>
-        <Title title="LabKenon" size="2vw" />
+        <Flex
+          display={{ base: "flex" }}
+          justifyContent="flex-start"
+          onClick={() => router.push("/")}
+          cursor={"pointer"}
+        >
+          <Title title="LabKenon" size={"35px"} />
+        </Flex>
+
         <Flex
           flex={{ base: 1 }}
           justify={{ base: "center", md: "end" }}
@@ -242,12 +251,14 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: "Nossa Historia",
+    href: "/nossa-historia",
   },
   {
     label: "Orçamento",
+    href: "/orcamento",
   },
   {
     label: "Contato",
-    href: "#",
+    href: "/contact",
   },
 ];

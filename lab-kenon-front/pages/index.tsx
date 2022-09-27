@@ -6,7 +6,6 @@ import SideBar from "../components/Menu/SideBar";
 
 const Index: NextPage = () => (
   <>
-    <SideBar />
     <Container>
       <Title title="LabKenon" size="5vw" />
       <Flex direction="row" justifyContent="center">
