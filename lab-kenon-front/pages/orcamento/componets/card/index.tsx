@@ -1,12 +1,15 @@
 import { Flex, Heading, Image, Skeleton, Text, VStack } from "@chakra-ui/react";
 
 export interface ICard {
+  id?: number;
   title?: string;
   description?: string;
   tip?: string;
   img?: any;
   content?: any;
   loading?: boolean;
+  setIdSelected?: any;
+  idSelected?: any;
 }
 
 const Card = (props: ICard) => (
@@ -14,7 +17,6 @@ const Card = (props: ICard) => (
     {!props.loading ? (
       <Flex
         direction="column"
-        maxW="450px"
         maxH="500px"
         h="100%"
         borderRadius="8px"
@@ -26,8 +28,11 @@ const Card = (props: ICard) => (
         }}
         cursor={"pointer"}
         onClick={() => {
-          alert(props.title);
+          console.log(props.id);
+          props.setIdSelected(props.id);
         }}
+        border={props.id === props.idSelected ? "4px" : ""}
+        borderColor={props.id === props.idSelected ? "blue.500" : ""}
       >
         <VStack
           p="20px"
@@ -44,7 +49,6 @@ const Card = (props: ICard) => (
               <Image display="flex" src={props.img} alt={props.img} w="30%" />
             </Flex>
           )}
-
           <Flex justifyItems="center" justifyContent="center">
             <Heading fontSize={["md", "1xl", "1xl", "1xl"]} display="flex">
               {props.title}
@@ -54,7 +58,7 @@ const Card = (props: ICard) => (
         </VStack>
       </Flex>
     ) : (
-      <Skeleton height="200px" width="200px" />
+      <Skeleton height="250px" width="200px" borderRadius="8px" />
     )}
   </>
 );
