@@ -28,7 +28,6 @@ const Card = (props: ICard) => (
         }}
         cursor={"pointer"}
         onClick={() => {
-          console.log(props.id);
           props.setIdSelected(props.id);
         }}
         border={props.id === props.idSelected ? "4px" : ""}

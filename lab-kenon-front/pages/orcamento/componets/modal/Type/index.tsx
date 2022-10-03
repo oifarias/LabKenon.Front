@@ -3,14 +3,15 @@ import { useEffect, useState } from "react";
 import { setTimeout } from "timers";
 import mockType from "../../../../../public/mockType.json";
 import Card from "../../card";
-const Index = () => {
+
+const Index = (nextStep: any) => {
   const [loading, setLoading] = useState(true);
   const [idSelected, setIdSelected] = useState(null);
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1000);
   }, []);
 
   useEffect(() => {

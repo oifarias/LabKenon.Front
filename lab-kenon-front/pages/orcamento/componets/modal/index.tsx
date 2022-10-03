@@ -34,10 +34,10 @@ const Modal = () => {
         <Steps
           activeStep={activeStep}
           orientation="horizontal"
-          color={"blue.200"}
+          responsive={false}
         >
           {steps.map(({ label }) => (
-            <Step label={label} key={label} color={"blue.300"} />
+            <Step label={label} key={label} />
           ))}
         </Steps>
       </Flex>

@@ -27,11 +27,10 @@ const theme = extendTheme({
         _dark: "#fbec8f",
       },
     },
-    radii: {
+    radio: {
       button: "12px",
     },
   },
-
   colors: {
     black: "#16161D",
   },
