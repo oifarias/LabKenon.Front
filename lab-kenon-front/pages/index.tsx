@@ -1,8 +1,8 @@
-import { Text, Flex } from "@chakra-ui/react";
-import { Title } from "../components/Hero";
-import { Container } from "../components/Container";
+import { Flex, Text } from "@chakra-ui/react";
 import type { NextPage } from "next";
-import SideBar from "../components/Menu/SideBar";
+import { memo } from "react";
+import { Container } from "../components/Container";
+import { Title } from "../components/Title";
 
 const Index: NextPage = () => (
   <>
@@ -17,4 +17,4 @@ const Index: NextPage = () => (
   </>
 );
 
-export default Index;
+export default memo(Index);

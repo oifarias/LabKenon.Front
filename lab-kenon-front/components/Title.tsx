@@ -11,6 +11,6 @@ export const Title = ({ title, size }: { title: string; size: string }) => (
   </Flex>
 );
 
-Title.defaultProps = {
-  title: "with-chakra-ui-typescript",
-};
+// Title.defaultProps = {
+//   title: "with-chakra-ui-typescript",
+// };

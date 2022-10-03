@@ -1,6 +1,6 @@
 import { Container, Flex, Text } from "@chakra-ui/react";
 import { NextPage } from "next";
-import { Title } from "../../components/Hero";
+import { Title } from "../../components/Title";
 
 const Index: NextPage = () => (
   <>

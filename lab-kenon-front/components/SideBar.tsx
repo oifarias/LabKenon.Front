@@ -1,28 +1,27 @@
 import {
+  ChevronDownIcon,
+  ChevronRightIcon,
+  CloseIcon,
+  HamburgerIcon,
+} from "@chakra-ui/icons";
+import {
   Box,
-  Flex,
-  Text,
-  IconButton,
-  Stack,
   Collapse,
+  Flex,
   Icon,
+  IconButton,
   Link,
   Popover,
-  PopoverTrigger,
   PopoverContent,
+  PopoverTrigger,
+  Stack,
+  Text,
   useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react";
-import {
-  HamburgerIcon,
-  CloseIcon,
-  ChevronDownIcon,
-  ChevronRightIcon,
-} from "@chakra-ui/icons";
-import { Title } from "../Hero";
-import { DarkModeSwitch } from "../../components/DarkModeSwitch";
 import { useRouter } from "next/router";
-
+import { DarkModeSwitch } from "./DarkModeSwitch";
+import { Title } from "./Title";
 export default function SideBar() {
   const { isOpen, onToggle } = useDisclosure();
   const router = useRouter();

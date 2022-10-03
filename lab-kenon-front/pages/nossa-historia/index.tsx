@@ -1,5 +1,6 @@
 import { Container, Flex, Text } from "@chakra-ui/react";
-import { Title } from "../../components/Hero";
+import { memo } from "react";
+import { Title } from "../../components/Title";
 
 const Index = () => (
   <>
@@ -14,4 +15,4 @@ const Index = () => (
   </>
 );
 
-export default Index;
+export default memo(Index);
