@@ -6,14 +6,13 @@ export default class Document extends NextDocument {
     return (
       <Html>
         <Head>
-          Lab Kenon
+          <title> Lab Kenon</title>
           <meta name="description" content="Seu Laboratorio online" />
           <link rel="icon" href="/icon.ico" />
         </Head>
         <body>
           <ColorModeScript />
           <Main />
-
           <NextScript />
         </body>
       </Html>
