@@ -1,1 +1,32 @@
-[1.56, 1.6, 1.61, 1.67, 1.7, 1.74]
+[
+  {
+    "id": 1,
+    "name": "1.56",
+    "description": "Lentes indicadas para graus maiores de 2 esfericos"
+  },
+  {
+    "id": 2,
+    "name": "1.60",
+    "description": "Lentes indicadas para graus maiores de 3 esfericos"
+  },
+  {
+    "id": 3,
+    "name": "1.61",
+    "description": "Lentes indicadas para graus maiores de 4 esfericos"
+  },
+  {
+    "id": 4,
+    "name": "1.67",
+    "description": "Lentes indicadas para graus maiores de 4 esfericos"
+  },
+  {
+    "id": 5,
+    "name": "1.70",
+    "description": "Lentes indicadas para graus maiores de 5 esfericos"
+  },
+  {
+    "id": 6,
+    "name": "1.74",
+    "description": "Lentes indicadas para graus maiores de 6 esfericos"
+  }
+]

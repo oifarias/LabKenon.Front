@@ -2,7 +2,9 @@ import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
 import { Box, Button, Flex } from "@chakra-ui/react";
 import { Step, Steps, useSteps } from "chakra-ui-steps";
 import { Title } from "../../../../components/Title";
-import Type from "./Type";
+import Indice from "./indice";
+import Receita from "./receita";
+import Type from "./type";
 
 const Modal = () => {
   const GetCurrentStepComponent = (step: number) => {
@@ -10,26 +12,29 @@ const Modal = () => {
       case 0:
         return <Type />;
       case 1:
-        return <div> 2</div>;
+        return <Indice />;
       case 2:
-        return <div>3</div>;
+        return <Receita />;
       default:
         break;
     }
   };
+
   const { nextStep, prevStep, setStep, reset, activeStep } = useSteps({
     initialStep: 0,
   });
+
   const steps = [
-    { id: 1, label: "Tipo de Lente" },
+    { id: 1, label: "Material" },
     { id: 2, label: "Indice" },
     { id: 3, label: "Receita" },
     { id: 4, label: "Resumo" },
   ];
-  console.log(activeStep);
+
   return (
     <Flex alignItems="center" direction="column" justifyContent="center">
       <Title title="Orcamento" size="5vw" />
+
       <Flex>
         <Steps
           activeStep={activeStep}
@@ -41,6 +46,7 @@ const Modal = () => {
           ))}
         </Steps>
       </Flex>
+
       <Box margin={10} borderRadius={5} p={4}>
         {GetCurrentStepComponent(activeStep)}
       </Box>

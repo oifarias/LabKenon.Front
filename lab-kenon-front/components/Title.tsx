@@ -10,7 +10,3 @@ export const Title = ({ title, size }: { title: string; size: string }) => (
     <Heading fontSize={size}>{title}</Heading>
   </Flex>
 );
-
-// Title.defaultProps = {
-//   title: "with-chakra-ui-typescript",
-// };

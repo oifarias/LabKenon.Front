@@ -49,7 +49,13 @@ const Card = (props: ICard) => (
             </Flex>
           )}
           <Flex justifyItems="center" justifyContent="center">
-            <Heading fontSize={["md", "1xl", "1xl", "1xl"]} display="flex">
+            <Heading
+              fontSize={
+                props?.img
+                  ? ["md", "1xl", "1xl", "1xl"]
+                  : ["md", "3xl", "3xl", "3xl"]
+              }
+            >
               {props.title}
             </Heading>
           </Flex>
