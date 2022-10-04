@@ -6,6 +6,7 @@ import Indice from "./indice";
 import Receita from "./receita";
 import Type from "./type";
 
+//update
 const Modal = () => {
   const GetCurrentStepComponent = (step: number) => {
     switch (step) {
