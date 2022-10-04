@@ -4,7 +4,7 @@ import { setTimeout } from "timers";
 import mockIndice from "../../../../../public/mockIndice.json";
 import Card from "../../card";
 
-const Index = () => {
+const Indice = () => {
   const [loading, setLoading] = useState(true);
   const [idIndice, setIdIndice] = useState(null);
 
@@ -42,4 +42,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Indice;

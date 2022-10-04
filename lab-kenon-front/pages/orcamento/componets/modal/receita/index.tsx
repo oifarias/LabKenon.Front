@@ -2,7 +2,7 @@ import { Flex, Grid, GridItem, Input, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { setTimeout } from "timers";
 
-const Index = () => {
+const Receita = () => {
   const [loading, setLoading] = useState(true);
   const [idSelected, setIdSelected] = useState(null);
 
@@ -262,4 +262,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Receita;
