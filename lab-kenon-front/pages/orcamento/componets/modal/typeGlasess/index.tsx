@@ -4,7 +4,7 @@ import { setTimeout } from "timers";
 import mockType from "../../../../../public/mockType.json";
 import Card from "../../card";
 
-const Type = () => {
+const TypeGlasess = () => {
   const [loading, setLoading] = useState(true);
   const [idSelected, setIdSelected] = useState(null);
 
@@ -43,4 +43,4 @@ const Type = () => {
   );
 };
 
-export default Type;
+export default TypeGlasess;
