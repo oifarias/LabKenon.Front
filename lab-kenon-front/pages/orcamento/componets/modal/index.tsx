@@ -4,14 +4,15 @@ import { Step, Steps, useSteps } from "chakra-ui-steps";
 import { Title } from "../../../../components/Title";
 import Indice from "./indice";
 import Receita from "./receita";
-import Type from "./type";
+// import Type from "./type";
 
 //update
 const Modal = () => {
   const GetCurrentStepComponent = (step: number) => {
     switch (step) {
       case 0:
-        return <Type />;
+        // return <Type />;
+        return <div> oi </div>;
       case 1:
         return <Indice />;
       case 2:
