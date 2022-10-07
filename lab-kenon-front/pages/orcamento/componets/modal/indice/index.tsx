@@ -6,16 +6,21 @@ import Card from "../../card";
 
 const Indice = () => {
   const [loading, setLoading] = useState(true);
-  const [idIndice, setIdIndice] = useState(null);
+  const [idIndice, setIdIndice] = useState(0);
 
   useEffect(() => {
     setTimeout(() => {
+      const hasType =
+        localStorage.getItem("idIndice") === "0"
+          ? 99999
+          : localStorage.getItem("idIndice");
+      hasType !== null && setIdIndice(Number(hasType));
       setLoading(false);
     }, 1000);
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("idIndice", `${idIndice}`);
+    idIndice !== 0 && localStorage.setItem("idIndice", `${idIndice}`);
   }, [idIndice]);
 
   return (

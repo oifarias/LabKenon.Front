@@ -1,21 +1,6 @@
 import { Flex, Grid, GridItem, Input, Text } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
-import { setTimeout } from "timers";
 
 const Receita = () => {
-  const [loading, setLoading] = useState(true);
-  const [idSelected, setIdSelected] = useState(null);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("typeId", `${idSelected}`);
-  }, [idSelected]);
-
   return (
     <>
       <Flex
@@ -87,6 +72,7 @@ const Receita = () => {
               display="flex"
               justifyContent="center"
               justifyItems="center"
+              padding={"20px"}
             >
               <Text as="b"> Para Longe</Text>
             </GridItem>
@@ -178,6 +164,7 @@ const Receita = () => {
               display="flex"
               justifyContent="center"
               justifyItems="center"
+              padding={"20px"}
             >
               <Text as="b"> Para Perto</Text>
             </GridItem>

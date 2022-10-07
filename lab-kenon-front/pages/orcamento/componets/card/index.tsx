@@ -1,4 +1,12 @@
-import { Flex, Heading, Image, Skeleton, Text, VStack } from "@chakra-ui/react";
+import {
+  Flex,
+  Heading,
+  Image,
+  Skeleton,
+  Text,
+  Tooltip,
+  VStack,
+} from "@chakra-ui/react";
 
 export interface ICard {
   id?: number;
@@ -15,53 +23,55 @@ export interface ICard {
 const Card = (props: ICard) => (
   <>
     {!props.loading ? (
-      <Flex
-        direction="column"
-        maxH="500px"
-        h="100%"
-        borderRadius="8px"
-        bg="gray.100"
-        color="black"
-        _dark={{
-          bg: "gray.600",
-          color: "white",
-        }}
-        cursor={"pointer"}
-        onClick={() => {
-          props.setIdSelected(props.id);
-        }}
-        border={props.id === props.idSelected ? "4px" : ""}
-        borderColor={props.id === props.idSelected ? "blue.500" : ""}
-      >
-        <VStack
-          p="20px"
-          spacing="16px"
-          align="flex-start"
-          maxW="450px"
-          minW="200px"
+      <Tooltip hasArrow label={props.tip} bg="gray.300" color="black">
+        <Flex
+          direction="column"
+          maxH="500px"
           h="100%"
-          w="100%"
-          overflow="auto"
+          borderRadius="8px"
+          bg="gray.100"
+          color="black"
+          _dark={{
+            bg: "gray.600",
+            color: "white",
+          }}
+          cursor={"pointer"}
+          onClick={() => {
+            props.setIdSelected(props.id);
+          }}
+          border={props.id === props.idSelected ? "4px" : ""}
+          borderColor={props.id === props.idSelected ? "blue.500" : ""}
         >
-          {props?.img && (
-            <Flex justifyContent="center" justifyItems="center">
-              <Image display="flex" src={props.img} alt={props.img} w="30%" />
+          <VStack
+            p="20px"
+            spacing="16px"
+            align="flex-start"
+            maxW="450px"
+            minW="200px"
+            h="100%"
+            w="100%"
+            overflow="auto"
+          >
+            {props?.img && (
+              <Flex justifyContent="center" justifyItems="center">
+                <Image display="flex" src={props.img} alt={props.img} w="30%" />
+              </Flex>
+            )}
+            <Flex justifyItems="center" justifyContent="center">
+              <Heading
+                fontSize={
+                  props?.img
+                    ? ["md", "1xl", "1xl", "1xl"]
+                    : ["md", "3xl", "3xl", "3xl"]
+                }
+              >
+                {props.title}
+              </Heading>
             </Flex>
-          )}
-          <Flex justifyItems="center" justifyContent="center">
-            <Heading
-              fontSize={
-                props?.img
-                  ? ["md", "1xl", "1xl", "1xl"]
-                  : ["md", "3xl", "3xl", "3xl"]
-              }
-            >
-              {props.title}
-            </Heading>
-          </Flex>
-          <Text overflowY="auto">{props.content}</Text>
-        </VStack>
-      </Flex>
+            <Text overflowY="auto">{props.content}</Text>
+          </VStack>
+        </Flex>
+      </Tooltip>
     ) : (
       <Skeleton height="250px" width="200px" borderRadius="8px" />
     )}

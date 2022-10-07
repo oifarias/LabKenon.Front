@@ -6,16 +6,23 @@ import Card from "../../card";
 
 const TypeGlasess = () => {
   const [loading, setLoading] = useState(true);
-  const [idSelected, setIdSelected] = useState(null);
+  const [idSelected, setIdSelected] = useState(0);
 
   useEffect(() => {
     setTimeout(() => {
+      const hasType =
+        localStorage.getItem("typeId") === "0"
+          ? 999
+          : localStorage.getItem("typeId");
+      hasType !== null && setIdSelected(Number(hasType));
       setLoading(false);
     }, 1000);
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("typeId", `${idSelected}`);
+    if (idSelected !== 0) {
+      localStorage.setItem("typeId", `${idSelected}`);
+    }
   }, [idSelected]);
 
   return (
