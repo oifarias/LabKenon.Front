@@ -257,6 +257,10 @@ const NAV_ITEMS: Array<NavItem> = [
     href: "/orcamento",
   },
   {
+    label: "Lentes",
+    href: "/lentes",
+  },
+  {
     label: "Contato",
     href: "/contact",
   },

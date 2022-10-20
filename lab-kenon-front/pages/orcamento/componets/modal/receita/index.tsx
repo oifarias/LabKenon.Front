@@ -1,6 +1,65 @@
 import { Flex, Grid, GridItem, Input, Text } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
+
+export interface IReceita {
+  longeODEsferico: string;
+  longeODCilindrico: string;
+  longeODEixo: string;
+  // longe olho esquerdo
+  longeOEEsferico: string;
+  longeOECilindrico: string;
+  longeOEEixo: string;
+  // perto olho direito
+  pertoODEsferico: string;
+  pertoODCilindrico: string;
+  pertoODEixo: string;
+  // perto olho esquerdo
+  pertoOEEsferico: string;
+  pertoOECilindrico: string;
+  pertoOEEixo: string;
+}
 
 const Receita = () => {
+  const init = {
+    // longe olho direito
+    longeODEsferico: "",
+    longeODCilindrico: "",
+    longeODEixo: "",
+    // longe olho esquerdo
+    longeOEEsferico: "",
+    longeOECilindrico: "",
+    longeOEEixo: "",
+    // perto olho direito
+    pertoODEsferico: "",
+    pertoODCilindrico: "",
+    pertoODEixo: "",
+    // perto olho esquerdo
+    pertoOEEsferico: "",
+    pertoOECilindrico: "",
+    pertoOEEixo: "",
+  };
+  const [receitaJson, setReceitaJson] = useState(init as IReceita);
+
+  // useEffect(() => {
+  //   const hasReceita =
+  //     localStorage.getItem("receitaJson") !== undefined &&
+  //     JSON.parse(localStorage.getItem("receitaJson") || "{}");
+  //   hasReceita !== "{}" && setReceitaJson(hasReceita as IReceita);
+  // }, []);
+
+  useEffect(() => {
+    localStorage.setItem("receitaJson", JSON.stringify(receitaJson));
+  }, [receitaJson]);
+
+  const handleChange = (e: any) => {
+    const { id, value } = e.target;
+    setReceitaJson((receitaJson) => ({
+      ...receitaJson,
+      [id]: value,
+    }));
+    console.log(receitaJson);
+  };
+
   return (
     <>
       <Flex
@@ -94,7 +153,13 @@ const Receita = () => {
               justifyContent="center"
               justifyItems="center"
             >
-              <Input variant="filled" type="number" />
+              <Input
+                value={receitaJson.longeODEsferico}
+                onChange={handleChange}
+                variant="filled"
+                type="number"
+                id="longeODEsferico"
+              />
             </GridItem>
             <GridItem
               border={"1px"}
@@ -104,7 +169,13 @@ const Receita = () => {
               justifyContent="center"
               justifyItems="center"
             >
-              <Input variant="filled" type="number" />
+              <Input
+                value={receitaJson.longeODCilindrico}
+                onChange={handleChange}
+                variant="filled"
+                type="number"
+                id="longeODCilindrico"
+              />
             </GridItem>
             <GridItem
               border={"1px"}
@@ -114,7 +185,13 @@ const Receita = () => {
               justifyContent="center"
               justifyItems="center"
             >
-              <Input variant="filled" type="number" />
+              <Input
+                value={receitaJson.longeODEixo}
+                onChange={handleChange}
+                variant="filled"
+                type="number"
+                id="longeODEixo"
+              />
             </GridItem>
             <GridItem
               border={"1px"}
@@ -134,7 +211,13 @@ const Receita = () => {
               justifyContent="center"
               justifyItems="center"
             >
-              <Input variant="filled" type="number" />
+              <Input
+                value={receitaJson.longeOEEsferico}
+                onChange={handleChange}
+                variant="filled"
+                type="number"
+                id="longeOEEsferico"
+              />
             </GridItem>
             <GridItem
               border={"1px"}
@@ -144,7 +227,13 @@ const Receita = () => {
               justifyContent="center"
               justifyItems="center"
             >
-              <Input variant="filled" type="number" />
+              <Input
+                value={receitaJson.longeOECilindrico}
+                onChange={handleChange}
+                variant="filled"
+                type="number"
+                id="longeOECilindrico"
+              />
             </GridItem>
             <GridItem
               border={"1px"}
@@ -154,7 +243,13 @@ const Receita = () => {
               justifyContent="center"
               justifyItems="center"
             >
-              <Input variant="filled" type="number" />
+              <Input
+                value={receitaJson.longeOEEixo}
+                onChange={handleChange}
+                variant="filled"
+                type="number"
+                id="longeOEEixo"
+              />
             </GridItem>
             <GridItem
               rowSpan={2}
@@ -186,7 +281,13 @@ const Receita = () => {
               justifyContent="center"
               justifyItems="center"
             >
-              <Input variant="filled" type="number" />
+              <Input
+                value={receitaJson.pertoODEsferico}
+                onChange={handleChange}
+                variant="filled"
+                type="number"
+                id="pertoODEsferico"
+              />
             </GridItem>
             <GridItem
               border={"1px"}
@@ -196,7 +297,13 @@ const Receita = () => {
               justifyContent="center"
               justifyItems="center"
             >
-              <Input variant="filled" type="number" />
+              <Input
+                value={receitaJson.pertoODCilindrico}
+                onChange={handleChange}
+                variant="filled"
+                type="number"
+                id="pertoODCilindrico"
+              />
             </GridItem>
             <GridItem
               border={"1px"}
@@ -206,7 +313,13 @@ const Receita = () => {
               justifyContent="center"
               justifyItems="center"
             >
-              <Input variant="filled" type="number" />
+              <Input
+                value={receitaJson.pertoODEixo}
+                onChange={handleChange}
+                variant="filled"
+                type="number"
+                id="pertoODEixo"
+              />
             </GridItem>
             <GridItem
               border={"1px"}
@@ -226,7 +339,13 @@ const Receita = () => {
               justifyContent="center"
               justifyItems="center"
             >
-              <Input variant="filled" type="number" />
+              <Input
+                value={receitaJson.pertoOEEsferico}
+                onChange={handleChange}
+                variant="filled"
+                type="number"
+                id="pertoOEEsferico"
+              />
             </GridItem>
             <GridItem
               border={"1px"}
@@ -236,7 +355,13 @@ const Receita = () => {
               justifyContent="center"
               justifyItems="center"
             >
-              <Input variant="filled" type="number" />
+              <Input
+                value={receitaJson.pertoOECilindrico}
+                onChange={handleChange}
+                variant="filled"
+                type="number"
+                id="pertoOECilindrico"
+              />
             </GridItem>
             <GridItem
               border={"1px"}
@@ -246,7 +371,13 @@ const Receita = () => {
               justifyContent="center"
               justifyItems="center"
             >
-              <Input variant="filled" type="number" />
+              <Input
+                value={receitaJson.pertoOEEixo}
+                onChange={handleChange}
+                variant="filled"
+                type="number"
+                id="pertoOEEixo"
+              />
             </GridItem>
           </Grid>
         </Flex>

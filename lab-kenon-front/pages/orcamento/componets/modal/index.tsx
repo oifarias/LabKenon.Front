@@ -1,13 +1,23 @@
 import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
 import { Box, Button, Flex } from "@chakra-ui/react";
 import { Step, Steps, useSteps } from "chakra-ui-steps";
+import { useEffect } from "react";
 import { Title } from "../../../../components/Title";
 import Indice from "./indice";
 import Receita from "./receita";
+import Resumo from "./resumo";
 import TypeGlasess from "./typeGlasess";
 
 //update
 const Modal = () => {
+  useEffect(() => {
+    const currentStep =
+      localStorage.getItem("currentStep") === "0"
+        ? 99999
+        : localStorage.getItem("currentStep");
+    currentStep !== null && setStep(Number(currentStep));
+  }, []);
+
   const GetCurrentStepComponent = (step: number) => {
     switch (step) {
       case 0:
@@ -16,6 +26,8 @@ const Modal = () => {
         return <Indice />;
       case 2:
         return <Receita />;
+      case 3:
+        return <Resumo />;
       default:
         break;
     }
@@ -25,11 +37,15 @@ const Modal = () => {
     initialStep: 0,
   });
 
+  useEffect(() => {
+    activeStep !== 0 && localStorage.setItem("currentStep", `${activeStep}`);
+  }, [activeStep]);
+
   const steps = [
-    { id: 1, label: "Material" },
-    { id: 2, label: "Indice" },
-    { id: 3, label: "Receita" },
-    { id: 4, label: "Resumo" },
+    { label: "Material" },
+    { label: "Indice" },
+    { label: "Receita" },
+    { label: "Resumo" },
   ];
 
   return (

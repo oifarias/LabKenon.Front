@@ -1,7 +1,7 @@
 import { Box, SimpleGrid } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { setTimeout } from "timers";
-import mockType from "../../../../../public/mockType.json";
+import mockType from "../../../../../public/mock.json";
 import Card from "../../card";
 
 const TypeGlasess = () => {
@@ -30,15 +30,14 @@ const TypeGlasess = () => {
       <SimpleGrid columns={[1, 2, 4]} gap={8}>
         {mockType.map((v, i) => {
           return (
-            <Box w="100%" height="250px" width="200px" key={v.id + i}>
+            <Box w="100%" height="250px" width="200px" key={v.idType + i}>
               <Card
                 content={v.description}
                 description={v.description}
-                tip={v.description}
-                title={v.name}
-                img={v.icon}
+                title={v.typeName}
+                // img={v.icon}
                 loading={loading}
-                id={v.id}
+                id={v.idType}
                 idSelected={idSelected}
                 setIdSelected={setIdSelected}
               />
