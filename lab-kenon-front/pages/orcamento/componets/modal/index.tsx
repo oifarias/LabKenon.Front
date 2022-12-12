@@ -64,10 +64,10 @@ const Modal = () => {
         </Steps>
       </Flex>
 
-      <Box margin={10} borderRadius={5} p={4}>
+      <Box borderRadius={5}>
         {GetCurrentStepComponent(activeStep)}
       </Box>
-      <Flex gridGap={10}>
+      <Flex gridGap={10} paddingTop={5}>
         <Button
           {...{ nextStep, prevStep }}
           size="md"
