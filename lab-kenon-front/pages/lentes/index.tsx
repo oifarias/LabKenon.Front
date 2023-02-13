@@ -10,7 +10,9 @@ const Index = () => {
     setTimeout(() => {
       setLoading(false);
     }, 2000);
+    console.log("teste");
   }, []);
+
 
   return (
     <Flex direction={"column"} gap="20px" padding="40px">
