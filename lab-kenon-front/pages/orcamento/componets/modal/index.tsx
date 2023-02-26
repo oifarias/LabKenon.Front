@@ -54,7 +54,7 @@ const Modal = () => {
   }
 
   return (
-    <div>
+    <>
       <Flex alignItems="center" direction="column" justifyContent="">
         <Title title="Orcamento" size="8vw" />
         <Flex>
@@ -68,7 +68,7 @@ const Modal = () => {
             ))}
           </Steps>
         </Flex>
-        <Box borderRadius={5}>{GetCurrentStepComponent(activeStep)}</Box>
+        <Flex>{GetCurrentStepComponent(activeStep)}</Flex>
         <Flex gridGap={10} paddingTop={5} paddingBottom={5}>
           <Button
             {...{ nextStep, prevStep }}
@@ -86,7 +86,7 @@ const Modal = () => {
           </Button>
         </Flex>
       </Flex>
-    </div>
+    </>
   );
 };
 export default Modal;

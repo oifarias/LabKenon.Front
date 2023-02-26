@@ -26,8 +26,10 @@ const Card = (props: ICard) => (
       <Tooltip hasArrow label={props.tip} bg="gray.300" color="black">
         <Flex
           direction="column"
-          maxH="300px"
-          maxW="220px"
+          maxH="200px"
+          maxW="180px"
+          minH="200px"
+          minW="150px"
           h="100%"
           borderRadius="8px"
           bg="gray.100"
@@ -47,11 +49,9 @@ const Card = (props: ICard) => (
             p="20px"
             spacing="16px"
             align="flex-start"
-            maxW="450px"
-            minW="200px"
-            h="100%"
-            w="100%"
-            overflow="auto"
+            // h="100%"
+            // w="100%"
+            // overflow="auto"
           >
             {props?.img && (
               <Flex justifyContent="center" justifyItems="center">
@@ -74,7 +74,7 @@ const Card = (props: ICard) => (
         </Flex>
       </Tooltip>
     ) : (
-      <Skeleton height="250px" width="200px" borderRadius="8px" />
+      <Skeleton width="170px" height="200" borderRadius={"8px"} />
     )}
   </>
 );
