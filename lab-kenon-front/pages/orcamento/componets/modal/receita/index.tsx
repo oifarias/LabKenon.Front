@@ -100,6 +100,7 @@ const Receita = () => {
               display="flex"
               justifyContent="center"
               justifyItems="center"
+              padding={"10px"}
             >
               <Text as="b"> Esférico</Text>
             </GridItem>
@@ -110,6 +111,7 @@ const Receita = () => {
               display="flex"
               justifyContent="center"
               justifyItems="center"
+              padding={"10px"}
             >
               <Text as="b"> Cilindrico</Text>
             </GridItem>
@@ -120,6 +122,7 @@ const Receita = () => {
               display="flex"
               justifyContent="center"
               justifyItems="center"
+              padding={"10px"}
             >
               <Text as="b"> Eixo</Text>
             </GridItem>
@@ -142,6 +145,7 @@ const Receita = () => {
               display="flex"
               justifyContent="center"
               justifyItems="center"
+              padding={"10px"}
             >
               <Text as="b"> OD</Text>
             </GridItem>
@@ -200,6 +204,7 @@ const Receita = () => {
               display="flex"
               justifyContent="center"
               justifyItems="center"
+              padding={"10px"}
             >
               <Text as="b"> OE</Text>
             </GridItem>
@@ -270,6 +275,7 @@ const Receita = () => {
               display="flex"
               justifyContent="center"
               justifyItems="center"
+              padding={"10px"}
             >
               <Text as="b"> OD</Text>
             </GridItem>
@@ -328,6 +334,7 @@ const Receita = () => {
               display="flex"
               justifyContent="center"
               justifyItems="center"
+              padding={"10px"}
             >
               <Text as="b"> OE</Text>
             </GridItem>

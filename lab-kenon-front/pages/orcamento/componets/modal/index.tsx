@@ -1,5 +1,5 @@
 import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
-import { Box, Button, Flex } from "@chakra-ui/react";
+import { Box, Button, Flex,useMediaQuery  } from "@chakra-ui/react";
 import { Step, Steps, useSteps } from "chakra-ui-steps";
 import { useEffect } from "react";
 import { Title } from "../../../../components/Title";
@@ -8,7 +8,6 @@ import Receita from "./receita";
 import Resumo from "./resumo";
 import TypeGlasess from "./typeGlasess";
 
-//update
 const Modal = () => {
   useEffect(() => {
     const currentStep =
@@ -47,43 +46,47 @@ const Modal = () => {
     { label: "Receita" },
     { label: "Resumo" },
   ];
+  const [width] = useMediaQuery('(min-width: 500px)')
+
+  function getLabel(label: string) {
+    const result = width ? label: "";
+    return result;
+  }
 
   return (
-    <Flex alignItems="center" direction="column" justifyContent="center">
-      <Title title="Orcamento" size="5vw" />
-
-      <Flex>
-        <Steps
-          activeStep={activeStep}
-          orientation="horizontal"
-          responsive={false}
-        >
-          {steps.map(({ label }) => (
-            <Step label={label} key={label} />
-          ))}
-        </Steps>
+    <div>
+      <Flex alignItems="center" direction="column" justifyContent="">
+        <Title title="Orcamento" size="8vw" />
+        <Flex>
+          <Steps
+            activeStep={activeStep}
+            orientation="horizontal"
+            responsive={false}
+          >
+            {steps.map(({ label }) => (
+              <Step label={getLabel(label)} key={label} />
+            ))}
+          </Steps>
+        </Flex>
+        <Box borderRadius={5}>{GetCurrentStepComponent(activeStep)}</Box>
+        <Flex gridGap={10} paddingTop={5} paddingBottom={5}>
+          <Button
+            {...{ nextStep, prevStep }}
+            size="md"
+            onClick={() => prevStep()}
+          >
+            <ArrowBackIcon />
+          </Button>
+          <Button
+            {...{ nextStep, prevStep }}
+            size="md"
+            onClick={() => nextStep()}
+          >
+            <ArrowForwardIcon />
+          </Button>
+        </Flex>
       </Flex>
-
-      <Box borderRadius={5}>
-        {GetCurrentStepComponent(activeStep)}
-      </Box>
-      <Flex gridGap={10} paddingTop={5}>
-        <Button
-          {...{ nextStep, prevStep }}
-          size="md"
-          onClick={() => prevStep()}
-        >
-          <ArrowBackIcon />
-        </Button>
-        <Button
-          {...{ nextStep, prevStep }}
-          size="md"
-          onClick={() => nextStep()}
-        >
-          <ArrowForwardIcon />
-        </Button>
-      </Flex>
-    </Flex>
+    </div>
   );
 };
 export default Modal;

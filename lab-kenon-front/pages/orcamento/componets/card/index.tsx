@@ -26,7 +26,8 @@ const Card = (props: ICard) => (
       <Tooltip hasArrow label={props.tip} bg="gray.300" color="black">
         <Flex
           direction="column"
-          maxH="500px"
+          maxH="300px"
+          maxW="220px"
           h="100%"
           borderRadius="8px"
           bg="gray.100"

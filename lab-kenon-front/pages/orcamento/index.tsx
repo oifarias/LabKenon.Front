@@ -12,9 +12,9 @@ const Index = () => {
   }, []);
 
   return (
-    <Flex direction={"column"} gap="20px" padding="40px">
+    // <Flex direction={"column"}>
       <Modal />
-    </Flex>
+    // </Flex>
   );
 };
 

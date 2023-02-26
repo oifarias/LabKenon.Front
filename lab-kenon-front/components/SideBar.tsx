@@ -29,9 +29,9 @@ export default function SideBar() {
   return (
     <Box>
       <Flex
-        minH={"60px"}
-        py={{ base: 2 }}
-        px={{ base: 4 }}
+        // minH={"60px"}
+        // py={{ base: 2 }}
+        // px={{ base: 4 }}
         borderBottom={1}
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.900")}
@@ -56,7 +56,8 @@ export default function SideBar() {
             }
             variant={"ghost"}
             aria-label={"Toggle Navigation"}
-            marginRight="100px"
+            // marginRight="100px"
+            marginLeft={5}
           />
         </Flex>
         <Flex
@@ -64,8 +65,9 @@ export default function SideBar() {
           justifyContent="flex-start"
           onClick={() => router.push("/")}
           cursor={"pointer"}
+          marginLeft={29}
         >
-          <Title title="LabKenon" size={"35px"} />
+          <Title title="LabKenon" size={"35px"}/>
         </Flex>
 
         <Flex
@@ -73,7 +75,7 @@ export default function SideBar() {
           justify={{ base: "center", md: "end" }}
           marginRight={10}
         >
-          <Flex display={{ base: "none", md: "flex" }} ml={10}>
+          <Flex display={{ base: "none", md: "flex" }} ml={10} >
             <DesktopNav />
           </Flex>
         </Flex>
