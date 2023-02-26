@@ -26,10 +26,6 @@ const Card = (props: ICard) => (
       <Tooltip hasArrow label={props.tip} bg="gray.300" color="black">
         <Flex
           direction="column"
-          maxH="200px"
-          maxW="180px"
-          minH="200px"
-          minW="150px"
           h="100%"
           borderRadius="8px"
           bg="gray.100"
@@ -49,9 +45,7 @@ const Card = (props: ICard) => (
             p="20px"
             spacing="16px"
             align="flex-start"
-            // h="100%"
-            // w="100%"
-            // overflow="auto"
+
           >
             {props?.img && (
               <Flex justifyContent="center" justifyItems="center">

@@ -25,10 +25,9 @@ const Indice = () => {
 
   return (
     <>
-      <SimpleGrid columns={[2, 3]} gap={[6,8]} paddingTop={5}>
+        <SimpleGrid columns={[2, 2, 3]} gap={[4,6,6]} paddingTop={10}>
         {mockIndice.map((v, i) => {
           return (
-            <Box w="100%" height="250px" width="200px" key={v.id + i}>
               <Card
                 content={v.description}
                 description={v.description}
@@ -38,8 +37,8 @@ const Indice = () => {
                 id={v.id}
                 idSelected={idIndice}
                 setIdSelected={setIdIndice}
+                key={`${v.id}-${i}`}
               />
-            </Box>
           );
         })}
       </SimpleGrid>

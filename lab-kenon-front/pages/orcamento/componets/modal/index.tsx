@@ -3,10 +3,11 @@ import { Box, Button, Flex,useMediaQuery  } from "@chakra-ui/react";
 import { Step, Steps, useSteps } from "chakra-ui-steps";
 import { useEffect } from "react";
 import { Title } from "../../../../components/Title";
+import Conclusao from "./conclusao";
 import Indice from "./indice";
 import Receita from "./receita";
 import Resumo from "./resumo";
-import TypeGlasess from "./typeGlasess";
+import TypeGlasess from "./tipo-lente";
 
 const Modal = () => {
   useEffect(() => {
@@ -27,6 +28,8 @@ const Modal = () => {
         return <Receita />;
       case 3:
         return <Resumo />;
+        case 4:
+        return <Conclusao/>;
       default:
         break;
     }
@@ -68,17 +71,17 @@ const Modal = () => {
             ))}
           </Steps>
         </Flex>
-        <Flex>{GetCurrentStepComponent(activeStep)}</Flex>
+        {GetCurrentStepComponent(activeStep)}
         <Flex gridGap={10} paddingTop={5} paddingBottom={5}>
           <Button
-            {...{ nextStep, prevStep }}
+            // {...{ nextStep, prevStep }}
             size="md"
             onClick={() => prevStep()}
           >
             <ArrowBackIcon />
           </Button>
           <Button
-            {...{ nextStep, prevStep }}
+            // {...{ nextStep, prevStep }}
             size="md"
             onClick={() => nextStep()}
           >

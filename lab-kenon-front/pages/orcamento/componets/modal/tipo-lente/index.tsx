@@ -30,18 +30,17 @@ const TypeGlasess = () => {
       <SimpleGrid columns={[2, 2, 3]} gap={[4,6,6]} paddingTop={10}>
         {mockType.map((v, i) => {
           return (
-            <Box w="100%" height="250px" width="200px" key={v.idType + i}>
               <Card
                 content={v.description}
                 description={v.description}
                 title={v.typeName}
-                // img={v.icon}
+                //  img={v.icon}
                 loading={loading}
                 id={v.idType}
                 idSelected={idSelected}
                 setIdSelected={setIdSelected}
+                key={`${v.idType}-${i}`}
               />
-            </Box>
           );
         })}
       </SimpleGrid>

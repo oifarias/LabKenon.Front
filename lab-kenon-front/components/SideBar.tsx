@@ -56,7 +56,6 @@ export default function SideBar() {
             }
             variant={"ghost"}
             aria-label={"Toggle Navigation"}
-            // marginRight="100px"
             marginLeft={5}
           />
         </Flex>
