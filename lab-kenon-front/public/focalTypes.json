@@ -1,0 +1,12 @@
+[
+  {
+    "id": 100,
+    "name": "Monofocal",
+    "description": "Lentes somente para perto ou longe."
+  },
+  {
+    "id": 102,
+    "name": "Multifocal",
+    "description": "Lentes para perto e longe."
+  }
+]

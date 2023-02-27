@@ -2,7 +2,7 @@ import { Box, SimpleGrid } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { setTimeout } from "timers";
 import mockIndice from "../../../../../public/mockIndice.json";
-import Card from "../../card";
+import Card from "../../../../../components/Card";
 
 const Indice = () => {
   const [loading, setLoading] = useState(true);

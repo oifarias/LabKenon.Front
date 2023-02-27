@@ -1,15 +1,15 @@
 import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
-import { Box, Button, Flex,useMediaQuery  } from "@chakra-ui/react";
+import { Box, Button, Flex, useMediaQuery } from "@chakra-ui/react";
 import { Step, Steps, useSteps } from "chakra-ui-steps";
 import { useEffect } from "react";
-import { Title } from "../../../../components/Title";
-import Conclusao from "./conclusao";
-import Indice from "./indice";
-import Receita from "./receita";
-import Resumo from "./resumo";
-import TypeGlasess from "./tipo-lente";
+import { Title } from "../../../components/Title";
+import Receita from "../../orcamento/componets/modal/receita";
+import Resumo from "../../orcamento/componets/modal/resumo";
+import Primeiro from "./primeiro";
+import Segundo from "./segundo";
+import Terceiro from "./terceiro";
 
-const Modal = () => {
+const BaseModal = () => {
   useEffect(() => {
     const currentStep =
       localStorage.getItem("currentStep") === "0"
@@ -21,15 +21,15 @@ const Modal = () => {
   const GetCurrentStepComponent = (step: number) => {
     switch (step) {
       case 0:
-        return <TypeGlasess />;
+        return <Primeiro />;
       case 1:
-        return <Indice />;
+        return <Segundo />;
       case 2:
-        return <Receita />;
+        return <Terceiro />;
       case 3:
+        return <Receita />;
+      case 4:
         return <Resumo />;
-        case 4:
-        return <Conclusao/>;
       default:
         break;
     }
@@ -44,16 +44,17 @@ const Modal = () => {
   }, [activeStep]);
 
   const steps = [
-    { label: "Material" },
+    { label: "Grau" },
     { label: "Indice" },
+    { label: "Tratamento" },
     { label: "Receita" },
     { label: "Resumo" },
   ];
-  
-  const [width] = useMediaQuery('(min-width: 500px)')
+
+  const [width] = useMediaQuery("(min-width: 500px)");
 
   function getLabel(label: string) {
-    const result = width ? label: "";
+    const result = width ? label : "";
     return result;
   }
 
@@ -74,16 +75,10 @@ const Modal = () => {
         </Flex>
         {GetCurrentStepComponent(activeStep)}
         <Flex gridGap={10} paddingTop={5} paddingBottom={5}>
-          <Button
-            size="md"
-            onClick={() => prevStep()}
-          >
+          <Button size="md" onClick={() => prevStep()}>
             <ArrowBackIcon />
           </Button>
-          <Button
-            size="md"
-            onClick={() => nextStep()}
-          >
+          <Button size="md" onClick={() => nextStep()}>
             <ArrowForwardIcon />
           </Button>
         </Flex>
@@ -91,4 +86,4 @@ const Modal = () => {
     </>
   );
 };
-export default Modal;
+export default BaseModal;

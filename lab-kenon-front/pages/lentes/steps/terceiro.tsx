@@ -1,10 +1,10 @@
 import { Box, SimpleGrid } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { setTimeout } from "timers";
-import mockType from "../../../../../public/mock.json";
-import Card from "../../../../../components/Card";
+import mockType from "../../../public/mockType.json";
+import Card from "../../../components/Card";
 
-const TypeGlasess = () => {
+const Terceiro = () => {
   const [loading, setLoading] = useState(true);
   const [idSelected, setIdSelected] = useState(0);
 
@@ -33,13 +33,13 @@ const TypeGlasess = () => {
               <Card
                 content={v.description}
                 description={v.description}
-                title={v.typeName}
-                //  img={v.icon}
+                title={v.name}
+                img={v.icon}
                 loading={loading}
-                id={v.idType}
+                id={v.id}
                 idSelected={idSelected}
                 setIdSelected={setIdSelected}
-                key={`${v.idType}-${i}`}
+                key={`${v.id}-${i}`}
               />
           );
         })}
@@ -48,4 +48,4 @@ const TypeGlasess = () => {
   );
 };
 
-export default TypeGlasess;
+export default Terceiro;
